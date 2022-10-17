@@ -1,9 +1,8 @@
 import "./register.css"
 import React, {useState} from 'react';
-import login from "../connexion/login.js";
 import {Link} from "react-router-dom";
 import axios from "axios";
-import register from "./register";
+import logo from "../img/geo-fill.svg";
 const registerURL = 'http://localhost:5001/register';
 
 
@@ -13,7 +12,6 @@ const Register = () => {
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [company, setCompany] = useState(null);
-    const [user, setUser] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -27,15 +25,16 @@ const Register = () => {
 
     return (
         <div className="container">
-            <form name="RegForm" id="inscription">
+            <form className="regisform" id="inscription">
+                <img className="logo" src={logo} alt=""/>
                 <h1>REGISTER</h1>
                 <input  type="text" name="username" id="username" placeholder="Name" onChange={(e) => {setName(e.target.value)}}/><br/>
                 <input className='descr' type="text" name="username" id="username" placeholder="Company name" onChange={(e) => {setCompany(e.target.value)}} /><br/>
                 <input className='descr' type="password" name="username" id="username" placeholder="Password" onChange={(e) => {setPassword(e.target.value)}}/><br/>
                 <input className='descr' type="email" name="username" id="username" placeholder="Email" onChange={(e) =>{setEmail(e.target.value)}}/><br/>
                 <input  type="text" name="username" id="username" placeholder="Phone number"  onChange={(e) =>{setPhone(e.target.value)}} /><br/>
-                <input type="button" value="CREATE" onClick={() => registerUsers()}/>
-                <Link to={"/login"}>Login</Link>
+                <input className="registerbutton" type="button" value="CREATE" onClick={() => registerUsers()}/>
+                <Link className="link" to={"/login"}>Login</Link>
             </form>
         </div>
     );

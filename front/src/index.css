@@ -1,4 +1,5 @@
 body {
+  background: #333333;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +11,133 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    margin: 1em 2em;
+  }
+}
+
+input {
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, .3);
+  border-top: 1px solid rgba(255, 255, 255, .3);
+  padding: 1rem;
+  width: 200px;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  font-weight: 500;
+  color: black;
+  transition: all .2s;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+  margin-bottom: 20px;
+}
+
+input:hover{
+  background: #e0e0e0;
+  box-shadow: inset 5px 5px 31px #bebebe,
+  inset -15px -15px 31px #ffffff;
+  transition: all .2s;
+  color: grey;
+  text-decoration: none;
+  border-radius: 50px;
+}
+
+.registerbutton {
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, .3);
+  border-top: 1px solid rgba(255, 255, 255, .3);
+  padding: 1rem;
+  width: 200px;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  font-weight: 500;
+  color: whitesmoke;
+  transition: all .3s;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+  margin-bottom: 20px;
+}
+
+.loginbutton {
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, .3);
+  border-top: 1px solid rgba(255, 255, 255, .3);
+  padding: 1rem;
+  width: 200px;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  font-weight: 500;
+  color: whitesmoke;
+  transition: all .3s;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+  margin-bottom: 20px;
+}
+
+button:hover {
+  border-radius: 50px;
+  background: #e0e0e0;
+  transition: all 1s;
+  box-shadow: inset 15px 15px 31px #bebebe,
+  inset -15px -15px 31px #ffffff;
+}
+
+.link{
+  display: flex;
+  justify-content: center;
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, .3);
+  border-top: 1px solid rgba(255, 255, 255, .3);
+  width: 100px;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  font-weight: 400;
+  color: black;
+  transition: all .3s;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+  margin-bottom: 20px;
+  padding: .5rem;
+}
+
+.link:hover{
+  background: #e0e0e0;
+  box-shadow: inset 15px 15px 31px #bebebe,
+  inset -15px -15px 31px #ffffff;
+  transition: all .2s;
+  color: darkturquoise;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.head{
+
+}
+.crumbs{
+  width: 100%;
+  background: #222222;
+  height: 5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .3);
+}
+
+.nav-item {
+  display: inline-block;
+  padding: 15px;
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.nav-item:hover{
+  transition: all .5s;
+  color: darkturquoise;
+  text-decoration: none;
+  border-radius: 5px;
+  background: #131111;
+  box-shadow: inset 19px 19px 27px #090808,
+  inset -19px -19px 27px #1d1a1a;
 }

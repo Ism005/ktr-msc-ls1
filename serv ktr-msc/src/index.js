@@ -14,7 +14,6 @@ app.use(express.json({extend:false }));
 app.use(userRoutes);
 
 
-
 connectDb().catch(err => console.log(err));
 app.listen(5001, () => {
     console.log("Started application on port %d", 5001);

@@ -4,9 +4,6 @@ import axios from 'axios';
 const userURL = 'http://localhost:5001/users/login';
 
 const Login =  () => {
-    const [name, setName] = useState("");
-    const [phone, setPhone] = useState("");
-    const [company, setCompany] = useState(null);
     const [user, setUser] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -22,23 +19,30 @@ const Login =  () => {
                     window.location.assign("/profile");
                 }
             })
-    }
+    };
 
     return (
         <div>
             <div className="container">
-                <form name="RegForm" id="inscription">
+                <form className="loginform" id="inscription">
                     <h1>LOGIN</h1>
                     <input className='descr' type="email" name="email" id="email" placeholder="Email" onChange={(e) => {setEmail(e.target.value)}} /><br/>
                     <input className='descr' type="password" name="username" id="username" placeholder="Password" onChange={(e) => {setPassword(e.target.value)}}/><br/>
-                        <button type="button"  onClick={() => loginUsers()}>
+                        <button className="loginbutton" type="button"  onClick={() => loginUsers()}>
                            LOGIN
                         </button>
-                    <Link to={"/"}>Register</Link>
+                    <Link className="link" to={"/"}>Register</Link>
                 </form>
             </div>
+
         </div>
     );
 };
 
 export default Login;
+
+
+
+
+
+

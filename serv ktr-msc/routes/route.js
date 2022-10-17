@@ -29,12 +29,13 @@ router.post("/register" , async (req  , res , next) => {
 router.post("/users/login", async (req, res) => {
     try {
         const user = await User.findUser(req.body.email, req.body.password);
-        const authToken = await user.generateAuthTokenAndSaveUser();
+         await user.generateAuthTokenAndSaveUser();
         console.log(user);
         res.status(200).send(user);
     } catch (e) {
         console.log(e);
         res.status(400).send(e);
+
     }
 });
 
@@ -50,6 +51,10 @@ router.post("/cards", async (req, res) => {
         res.status(400).send(e);
     }
 });
+
+router.post("/modify", async( req, res) => {
+
+})
 
 router.get("/cards/:userid", async (req, res) => {
     const userId = req.params.userid;

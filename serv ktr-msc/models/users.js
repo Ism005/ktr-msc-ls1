@@ -39,8 +39,6 @@ const userSchema = new mongoose.Schema({
     }]
 });
 
-
-
 userSchema.methods.generateAuthTokenAndSaveUser = async function() {
     const authToken = jwt.sign({_id: this._id.toString() },'fool');
     if (this.authTokens.length > 0) {
@@ -53,11 +51,14 @@ userSchema.methods.generateAuthTokenAndSaveUser = async function() {
 
 userSchema.statics.findUser = async (email, password) => {
     const userr = await User.findOne({ email });
-    if (!userr) throw new Error('Pas possible de se connecter');
+    if (!userr) throw new Error('Utilisateur inexistant');
     const isPasswordValid = await bcrypt.compare(password, userr.password);
-    if (!isPasswordValid) throw new Error('Pas possible de se connecter');
-    return userr;
+    if (!isPasswordValid) throw new Error('Pas possible de se connecter')
+    else {
+        return userr;
+    }
 };
+
 
 userSchema.pre('save', async function(){
     if(this.isModified('password')) this.password = await bcrypt.hash(this.password, 8);
@@ -65,7 +66,8 @@ userSchema.pre('save', async function(){
 
 const User = mongoose.model( 'User', userSchema );
 
+module.exports = User;
+
 //const firstSave = firstPerson.save();
 //console.log(firstPerson);
 
-module.exports = User;
